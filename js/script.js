@@ -9,6 +9,7 @@ botao.addEventListener('click',
     function(){
         let valorInput = entrada.value;
         itens.push(valorInput);
+        entrada.value = "";
         console.log(itens);
         atualizar();
     }
@@ -16,7 +17,13 @@ botao.addEventListener('click',
 
 function atualizar(){
     lista.innerHTML = "";
+
+    for(let i = 0; i <itens.length; i++){
+
     let li = document.createElement("li");
-    li.textContent = "Deu certo.";
+    li.textContent = itens[i];
     lista.appendChild(li);
+
+    }
+    
 }
